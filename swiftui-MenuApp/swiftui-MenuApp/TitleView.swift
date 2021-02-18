@@ -16,6 +16,24 @@ struct TitleView: View {
             if isTitleViewShowing {
                 Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
                     .font(.system(size: 50, weight: .heavy, design: .rounded))
+                    .foregroundColor(.white)
+                    .transition(.move(edge: .trailing))
+                
+                Text("Tab to Start")
+                    .font(.system(size: 20, weight: .heavy, design: .rounded))
+                    .foregroundColor(.white)
+                    .padding()
+                    .transition(.move(edge: .leading))
+                    .onTapGesture {
+                        withAnimation {
+                            isTitleViewShowing.toggle()
+                        }
+                    }
+            }
+        }
+        .onAppear {
+            withAnimation {
+                isTitleViewShowing.toggle()
             }
         }
     }
@@ -23,6 +41,10 @@ struct TitleView: View {
 
 struct TitleView_Previews: PreviewProvider {
     static var previews: some View {
-        TitleView(isTitleViewShowing: Binding.constant(true))
+        
+        ZStack {
+            SkyView()
+            TitleView(isTitleViewShowing: Binding.constant(true))
+        }
     }
 }

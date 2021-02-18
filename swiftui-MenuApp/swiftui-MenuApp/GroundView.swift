@@ -13,7 +13,7 @@ struct GroundView: View {
             .frame(height: 170)
             .offset(y: 44)
             .overlay(
-                ShrubberyView(amount: 8, color: Color(#colorLiteral(red: 0, green: 0.9810667634, blue: 0.5736914277, alpha: 1)), padding: -16, yOffset: -38, xOffset: 0, blur: 0)
+                ShrubberyView(amount: 10, color: Color(#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)), padding: -27, yOffset: -38, xOffset: 0, blur: 0)
                     .rotationEffect(.degrees(180)), alignment: .top
             )
         
